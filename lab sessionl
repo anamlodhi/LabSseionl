@@ -1,0 +1,65 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package sessional2;
+
+
+/**
+ *
+ * @author fa14-bse-091
+ */
+public class Sessional2 {
+    public static void main(String[] args) throws InterruptedException {
+        // TODO code application logic here
+        while(true)
+        {
+            
+            clock c = new clock();
+            System.out.println(c.timeofNow());
+            Thread.sleep(3585);
+        }
+    }
+    
+}
+public class seconds {
+    public String secs()
+        {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("ss");
+        Calendar cal = Calendar.getInstance();
+        
+        return dateFormat.format(cal.getTime());
+        }
+}
+
+public class minutes {
+    public String mins()
+        {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM");
+        Calendar cal = Calendar.getInstance();
+        return dateFormat.format(cal.getTime());
+        }
+    
+}
+public class hours {
+    
+        public String hours()
+        {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH");
+        Calendar cal = Calendar.getInstance();
+        return dateFormat.format(cal.getTime());
+        }
+}
+public class clock {
+    
+    public String timeofNow()
+    {
+        hours h = new hours();
+        minutes min = new minutes();
+        seconds sec = new seconds();
+        
+        return h.hours() +":"+ min.mins() +":"+ sec.secs();
+    }
+    
+}
